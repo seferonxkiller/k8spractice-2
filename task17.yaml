@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-container
+        image: nginx:1.18
+        env:
+        - name: AUTHOR
+          valueFrom:
+            configMapKeyRef:
+              name: my-configmap
+              key: AUTHOR
+        - name: ENV
+          valueFrom:
+            configMapKeyRef:
+              name: my-configmap
+              key: ENV
+        - name: HTTP_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: my-configmap
+              key: HTTP_PORT
+        - name: TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: my-secret
+              key: TOKEN
+        - name: OPERATO
+          valueFrom:
+            secretKeyRef:
+              name: my-secret
+              key: OPERATO

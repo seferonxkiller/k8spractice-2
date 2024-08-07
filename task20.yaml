@@ -1,0 +1,10 @@
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: d-xolmatov-pod-too-important
+  annotations:
+    description: "Priority class for critical pods"
+
+value: 1000000
+globalDefault: false
+description: "This priority class is for very important pods."

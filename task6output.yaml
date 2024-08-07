@@ -1,0 +1,2 @@
+NAMESPACE     NAME    READY   STATUS    RESTARTS   AGE
+a-taniqulov   nginx   1/1     Running   0          40m

@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  OPERATOR: b3BlcmF0b3I=
+  TOKEN: bXlfdG9rZW4=
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: my-secret
